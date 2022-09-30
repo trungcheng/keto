@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78d9e72b-ab63-4c6f-895d-f0a5f59b3f0d" name="Default Changelist" comment="" />
+    <list default="true" id="78d9e72b-ab63-4c6f-895d-f0a5f59b3f0d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/philippines/alert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/philippines/response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/getdata.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/getdata.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/post_ib_mess.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/post_ib_mess.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,17 +19,28 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2FRgsOJgsZ8s8AjxFwXuCIqt3Xa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/philippines" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\keto\philippines" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\keto\philippines" />
     </key>
@@ -34,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664460516822</updated>
       <workItem from="1664460517881" duration="13964000" />
+      <workItem from="1664503810980" duration="17400000" />
     </task>
     <servers />
   </component>

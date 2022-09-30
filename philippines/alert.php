@@ -10,11 +10,10 @@
 
     $deviceId = $data["Device_ID"];
     $team = $data["Team"];
-    $sdt = $data["Ib_Sdt"];
-    $content = $data["Ib_content"];
-    $time = $data["Ib_timestamp"];
+    $alertMess = $data["AlertMess"];
+    $alertTime = $data["AlertTime"];
 
-    $sql = "INSERT INTO csdl_upload_inboxmess(name, email, created_at) VALUES ('".$name."', '".$email."', NOW())";
+    $sql = "INSERT INTO alert(name, email, created_at) VALUES ('".$name."', '".$email."', NOW())";
 
     if (mysqli_query($conn, $sql)) {
         return response(true, 'Data inserted success', []);

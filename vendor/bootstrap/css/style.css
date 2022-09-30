@@ -1,0 +1,28 @@
+.table .thead-dark th {
+    color: #fff;
+    background-color: #1AB46A !important;
+    border-color: #FED32C !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #006838;
+    border-color: #1AB46A;
+}
+.bg-dark{
+	  background-color: #006838 !important;
+}
+.table .thead-dark th{
+	vertical-align: middle !important;
+}
+.navbar-dark .navbar-brand,.navbar-dark .navbar-nav .nav-link,.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link{
+	color: #ffffff;
+}
+@media(max-width: 769px){
+	table tr td img{
+		    padding: 0px !important;
+	}
+	table tr .hinh{
+		padding-left: 0px !important;
+		padding-right: 0px !important
+	}
+}

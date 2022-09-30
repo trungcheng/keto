@@ -2,7 +2,7 @@
     $server = "127.0.0.1";
     $user = "root";
     $password = "laragon";
-    $dbname = "manpower_test";
+    $dbname = "keto";
 
     $conn = mysqli_connect($server, $user, $password, $dbname);
 
