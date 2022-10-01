@@ -3,6 +3,7 @@
     $user = "root";
     $password = "laragon";
     $dbname = "keto";
+    $recordPerRequest = 20;
 
     $conn = mysqli_connect($server, $user, $password, $dbname);
 

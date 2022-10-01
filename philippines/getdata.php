@@ -9,12 +9,12 @@
     $deviceId = '';
     $localTime = 0;
 
-    if (isset($_GET['DeviceID'])) {
-        $deviceId = $_GET['DeviceID'];
+    if (isset($_GET['device_id'])) {
+        $deviceId = $_GET['device_id'];
     }
 
-    if (isset($_GET['LocalTime'])) {
-        $localTime = (int) $_GET['LocalTime'];
+    if (isset($_GET['local_time'])) {
+        $localTime = (int) $_GET['local_time'];
     }
 
     // Step 1: Check local time
@@ -66,14 +66,17 @@
     function getData($deviceId) {
         include "db.php";
 
-        $sql = "SELECT SDT, Content FROM csdl_sdt WHERE Status IS NULL ORDER BY Priority DESC LIMIT 20";
+        $sql = "SELECT SDT, Content FROM csdl_sdt WHERE Status IS NULL ORDER BY Priority DESC LIMIT " . $recordPerRequest;
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $rows = [];
 
             while ($row = mysqli_fetch_assoc($result)) {
-                $rows[] = $row;
+                $rows[] = [
+                    'sdt' => $row['SDT'][0] != '0' ? '0' . $row['SDT'] : $row['SDT'],
+                    'content' => $row['Content']
+                ];
             }
 
             updateData($rows, $deviceId);
@@ -95,7 +98,7 @@
             $now = date('Y-m-d H:i:s');
 
             foreach ($rows as $row) {
-                $sdt = $row['SDT'];
+                $sdt = $row['sdt'];
                 $sql = "UPDATE `csdl_sdt`
                     SET `Status` = 'used', `Used_TimeStamp` = '$now', `Sent_to_by_Device` = '$deviceId', `Team` = '$team'
                     WHERE `SDT` = '$sdt'";

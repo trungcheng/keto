@@ -8,17 +8,16 @@
 
     $data = json_decode(file_get_contents("php://input"), true);
 
-    $deviceId = $data["Device_ID"];
-    $team = $data["Team"];
-    $sdt = $data["Ib_Sdt"];
-    $content = $data["Ib_content"];
-    $time = $data["Ib_timestamp"];
+    $deviceId = $data["device_id"];
+    $team = $data["team"];
+    $sdt = $data["ib_sdt"];
+    $content = $data["ib_content"];
+    $time = date('Y-m-d H:i:s', strtotime(str_replace('/', '-', $data["ib_timestamp"])));
 
-    $sql = "INSERT INTO csdl_upload_inboxmess(name, email, created_at) VALUES ('".$name."', '".$email."', NOW())";
-
+    $sql = "INSERT INTO csdl_upload_inboxmess(Device_ID, Ib_Sdt, Ib_content, Team, Ib_timestamp) VALUES ('$deviceId', '$sdt', '$content', '$team', '$time')";
     if (mysqli_query($conn, $sql)) {
         return response(true, 'Data inserted success', []);
     }
 
-    return response(false, 'An error occurred', []);
+    return response(false, mysqli_error($conn), []);
 ?>

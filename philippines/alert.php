@@ -8,16 +8,15 @@
 
     $data = json_decode(file_get_contents("php://input"), true);
 
-    $deviceId = $data["Device_ID"];
-    $team = $data["Team"];
-    $alertMess = $data["AlertMess"];
-    $alertTime = $data["AlertTime"];
+    $deviceId = $data["device_id"];
+    $team = $data["team"];
+    $alertMess = $data["alert_mess"];
+    $alertTime = date('Y-m-d H:i:s', strtotime(str_replace('/', '-', $data["alert_time"])));
 
-    $sql = "INSERT INTO alert(name, email, created_at) VALUES ('".$name."', '".$email."', NOW())";
-
+    $sql = "INSERT INTO alert(Device_ID, AlertMess, AlertTime, Team) VALUES ('$deviceId', '$alertMess', '$alertTime', '$team')";
     if (mysqli_query($conn, $sql)) {
         return response(true, 'Data inserted success', []);
     }
 
-    return response(false, 'An error occurred', []);
+    return response(false, mysqli_error($conn), []);
 ?>
