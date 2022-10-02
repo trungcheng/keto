@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d9e72b-ab63-4c6f-895d-f0a5f59b3f0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/philippines/on_off_system.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philippines/alert.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/alert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philippines/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philippines/getdata.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/getdata.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philippines/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philippines/post_ib_mess.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/post_ib_mess.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/style.css" afterDir="false" />
@@ -73,7 +70,8 @@
       <updated>1664460516822</updated>
       <workItem from="1664460517881" duration="13964000" />
       <workItem from="1664503810980" duration="17400000" />
-      <workItem from="1664639049215" duration="4652000" />
+      <workItem from="1664639049215" duration="5450000" />
+      <workItem from="1664684809854" duration="1942000" />
     </task>
     <servers />
   </component>
@@ -90,5 +88,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

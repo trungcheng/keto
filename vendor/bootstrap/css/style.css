@@ -14,7 +14,7 @@
 	  background-color: #006838 !important;
 }
 
-.table .thead-dark th{
+.table .thead-dark th {
 	vertical-align: middle !important;
 }
 
@@ -22,7 +22,11 @@
 	color: #ffffff;
 }
 
-@media(max-width: 769px){
+.table tr {
+	line-height: 8px;
+}
+
+@media(max-width: 769px) {
 	table tr td img{
 		    padding: 0px !important;
 	}

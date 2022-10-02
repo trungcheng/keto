@@ -8,6 +8,17 @@
 
     $data = json_decode(file_get_contents("php://input"), true);
 
+    if (empty($data)) {
+        return response(false, 'No data provided', []);
+    }
+
+    $dataRequired = ['device_id', 'alert_mess', 'alert_time', 'team'];
+    foreach ($dataRequired as $key) {
+        if (!in_array($key, array_keys($data))) {
+            return response(false, $key . ' field is required', []);
+        }
+    }
+
     $deviceId = $data["device_id"];
     $team = $data["team"];
     $alertMess = $data["alert_mess"];

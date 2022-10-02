@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h3 class="mt-5">BẬT/TẮT HỆ THỐNG</h3>
+                <h4 class="mt-3">BẬT/TẮT HỆ THỐNG</h4>
                 <div>
                     <?php
                         $sql = "SELECT Status FROM on_off_time WHERE ID = 1";
@@ -35,16 +35,16 @@
                     </label>
                 </div>
 
-                <h3 class="mt-5">DANH SÁCH 20 ALERT GẦN NHẤT</h3>
+                <h4 class="mt-3">DANH SÁCH 20 ALERT GẦN NHẤT</h4>
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Team</th>
                                 <th scope="col">Device ID</th>
                                 <th scope="col">Alert message</th>
                                 <th scope="col">Alert time</th>
-                                <th scope="col">Team</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,10 +57,10 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $row["ID"]; ?></td>
+                                                <td><?php echo $row["Team"]; ?></td>
                                                 <td><?php echo $row["Device_ID"]; ?></td>
                                                 <td><?php echo $row["AlertMess"]; ?></td>
                                                 <td><?php echo $row["AlertTime"]; ?></td>
-                                                <td><?php echo $row["Team"]; ?></td>
                                             </tr>
                                         <?php
                                     };
