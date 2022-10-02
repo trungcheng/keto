@@ -14,7 +14,7 @@
     }
 
     if (isset($_GET['local_time'])) {
-        $localTime = (int) $_GET['local_time'];
+        $localTime = (int)$_GET['local_time'];
     }
 
     // Step 1: Check local time
@@ -29,13 +29,15 @@
     // Step 4: Get data
     getData($deviceId);
 
-    function checkLocalTime($localTime) {
+    function checkLocalTime($localTime)
+    {
         if (empty($localTime) || !is_numeric($localTime) || $localTime < 7 || $localTime > 20) {
             return response(false, 'Not working time, From 7 AM to 9 PM only', []);
         }
     }
 
-    function checkOnOffSystem() {
+    function checkOnOffSystem()
+    {
         include "db.php";
 
         $sql = "SELECT Status FROM on_off_time WHERE ID = 1";
@@ -47,7 +49,8 @@
         }
     }
 
-    function checkDeviceId($deviceId) {
+    function checkDeviceId($deviceId)
+    {
         include "db.php";
 
         if (empty($deviceId)) {
@@ -63,10 +66,11 @@
         }
     }
 
-    function getData($deviceId) {
+    function getData($deviceId)
+    {
         include "db.php";
 
-        $sql = "SELECT SDT, Content FROM csdl_sdt WHERE Status IS NULL ORDER BY Priority DESC LIMIT " . $recordPerRequest;
+        $sql = "SELECT SDT, Content FROM csdl_sdt WHERE Status IS NULL AND Insert_TimeStamp < NOW() ORDER BY Priority DESC LIMIT " . $recordPerRequest;
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -87,7 +91,8 @@
         return response(false, 'Data not found', []);
     }
 
-    function updateData($rows, $deviceId) {
+    function updateData($rows, $deviceId)
+    {
         include "db.php";
 
         if (!empty($rows)) {
@@ -100,8 +105,8 @@
             foreach ($rows as $row) {
                 $sdt = $row['sdt'];
                 $sql = "UPDATE `csdl_sdt`
-                    SET `Status` = 'used', `Used_TimeStamp` = '$now', `Sent_to_by_Device` = '$deviceId', `Team` = '$team'
-                    WHERE `SDT` = '$sdt'";
+                        SET `Status` = 'used', `Used_TimeStamp` = '$now', `Sent_to_by_Device` = '$deviceId', `Team` = '$team'
+                        WHERE `SDT` = '$sdt'";
 
                 mysqli_query($conn, $sql);
             }

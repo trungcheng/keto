@@ -95,3 +95,12 @@ input:checked + .slider:before {
 .slider.round:before {
 	border-radius: 50%;
 }
+
+#date-time {
+	position: absolute;
+	right: 15px;
+	top: 18px;
+	background: #1AB46A;
+	padding: 0 10px;
+	color: #fff;
+}

@@ -3,15 +3,14 @@
 ?>
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="utf-8">
-    <title>HỆ THỐNG SPAM SMS</title>
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../vendor/bootstrap/css/style.css" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>HỆ THỐNG SPAM SMS</title>
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../vendor/bootstrap/css/style.css" rel="stylesheet">
+    </head>
 
-<body>
+<body onload="display_ct();">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
@@ -22,7 +21,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h4 class="mt-3">BẬT/TẮT HỆ THỐNG</h4>
+                <div>
+                    <h4 class="mt-3">BẬT/TẮT HỆ THỐNG</h4>
+                    <span id="date-time"></span>
+                </div>
                 <div>
                     <?php
                         $sql = "SELECT Status FROM on_off_time WHERE ID = 1";
@@ -80,8 +82,8 @@
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $(function() {
-            $('#toggle-system').change(function() {
+        $(function () {
+            $('#toggle-system').change(function () {
                 var state = $(this).prop('checked');
 
                 $.ajax({
@@ -103,6 +105,45 @@
                 });
             });
         });
+
+        function display_c() {
+            mytime = setTimeout('display_ct()', 1000);
+        }
+
+        function display_ct() {
+            var x = new Date();
+
+            var month = x.getMonth() + 1;
+            var day = x.getDate();
+            var year = x.getFullYear();
+            var hour = x.getHours();
+            var minute = x.getMinutes();
+            var second = x.getSeconds();
+
+            if (month < 10) {
+                month = '0' + month;
+            }
+            if (day < 10) {
+                day = '0' + day;
+            }
+
+            var x3 = day + '/' + month + '/' + year;
+
+            if (hour < 10) {
+                hour = '0' + hour;
+            }
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
+            if (second < 10) {
+                second = '0' + second;
+            }
+
+            x3 += ' ' + hour + ':' + minute + ':' + second
+
+            document.getElementById('date-time').innerHTML = x3;
+            display_c();
+        }
     </script>
 </body>
 </html>
