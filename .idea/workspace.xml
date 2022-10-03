@@ -20,10 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d9e72b-ab63-4c6f-895d-f0a5f59b3f0d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/philippines/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/philippines/xss_clean.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/keto.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/alert.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/alert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philippines/getdata.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/getdata.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philippines/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/on_off_system.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/on_off_system.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philippines/post_ib_mess.php" beforeDir="false" afterPath="$PROJECT_DIR$/philippines/post_ib_mess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +71,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/philippines" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\keto\philippines" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\keto\assets" />
       <recent name="C:\laragon\www\keto\philippines" />
     </key>
   </component>
@@ -71,7 +91,8 @@
       <workItem from="1664503810980" duration="17400000" />
       <workItem from="1664639049215" duration="5450000" />
       <workItem from="1664684809854" duration="2599000" />
-      <workItem from="1664725933201" duration="2333000" />
+      <workItem from="1664725933201" duration="2696000" />
+      <workItem from="1664807972341" duration="9007000" />
     </task>
     <servers />
   </component>

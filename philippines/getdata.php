@@ -77,13 +77,18 @@
             $rows = [];
 
             while ($row = mysqli_fetch_assoc($result)) {
-                $rows[] = [
+                $item = [
+                    'SDT' => $row['SDT'],
                     'sdt' => $row['SDT'][0] != '0' ? '0' . $row['SDT'] : $row['SDT'],
                     'content' => $row['Content']
                 ];
+
+                updateData($row, $deviceId);
+
+                unset($item['SDT']);
+                $rows[] = $item;
             }
 
-            updateData($rows, $deviceId);
 
             return response(true, 'Get data success', $rows);
         }
@@ -91,25 +96,24 @@
         return response(false, 'Data not found', []);
     }
 
-    function updateData($rows, $deviceId)
+    function updateData($row, $deviceId)
     {
         include "db.php";
 
-        if (!empty($rows)) {
+        if (!empty($row)) {
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
             $sql = "SELECT Team FROM csdl_device WHERE Device_ID = '$deviceId'";
             $result = mysqli_query($conn, $sql);
             $response = mysqli_fetch_row($result);
             $team = !empty($response) ? $response[0] : '';
             $now = date('Y-m-d H:i:s');
+            $sdt = $row['SDT'];
 
-            foreach ($rows as $row) {
-                $sdt = $row['sdt'];
-                $sql = "UPDATE `csdl_sdt`
-                        SET `Status` = 'used', `Used_TimeStamp` = '$now', `Sent_to_by_Device` = '$deviceId', `Team` = '$team'
-                        WHERE `SDT` = '$sdt'";
+            $sql = "UPDATE `csdl_sdt`
+                    SET `Status` = 'used', `Used_TimeStamp` = '$now', `Sent_to_by_Device` = '$deviceId', `Team` = '$team'
+                    WHERE `SDT` = '$sdt'";
 
-                mysqli_query($conn, $sql);
-            }
+            mysqli_query($conn, $sql);
         }
     }
 ?>

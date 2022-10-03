@@ -3,31 +3,41 @@
 ?>
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="utf-8">
-        <title>HỆ THỐNG SPAM SMS</title>
-        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../vendor/bootstrap/css/style.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Hệ thống chăm sóc khách hàng nội bộ SMS</title>
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/style.css" rel="stylesheet">
+    <title>Hệ thống chăm sóc khách hàng nội bộ SMS</title>
+    <meta name="title" content="Hệ thống chăm sóc khách hàng nội bộ bằng SMS">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gửi tin nhắn chăm sóc khách hàng và nhận lại phản hồi từ khách">
+    <meta name="author" content="Hera Milk">
+    <meta property="og:url" content="https://suanghe.vn/customer-care/philippines"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Hệ thống chăm sóc khách hàng nội bộ bằng SMS"/>
+    <meta property="og:description" content="Hệ thống chăm sóc khách hàng nội bộ bằng SMS "/>
+    <meta property="og:image" content="./assets/customer-care.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content=https://suanghe.vn/customer-care/philippines">
+    <meta property="twitter:title" content="Hệ thống chăm sóc khách hàng bằng sms">
+    <meta property="twitter:description" content="Hệ thống chăm sóc khách hàng bằng sms">
+</head>
 
-<body onload="display_ct();">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">HỆ THỐNG SPAM SMS</a>
-        </div>
-    </nav>
+<body onload="timer_function()";>
+    <?php include('header.php'); ?>
     <!-- Page Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div>
                     <h4 class="mt-3">BẬT/TẮT HỆ THỐNG</h4>
-                    <span id="date-time"></span>
+                    <i><span id="date-time"></span></i>
                 </div>
                 <div>
                     <?php
-                        $sql = "SELECT Status FROM on_off_time WHERE ID = 1";
+                        $sql = "SELECT `Status` FROM `on_off_time` ORDER BY `ID` DESC LIMIT 1";
                         $result = mysqli_query($conn, $sql);
                         $status = mysqli_fetch_row($result);
                     ?>
@@ -106,43 +116,43 @@
             });
         });
 
-        function display_c() {
-            mytime = setTimeout('display_ct()', 1000);
+        function ajaxFunction() {
+            var httpxml;
+
+            try {
+                // Firefox, Opera 8.0+, Safari
+                httpxml = new XMLHttpRequest();
+            } catch (e) {
+                // Internet Explorer
+                try {
+                    httpxml = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        httpxml = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        alert("Your browser does not support AJAX!");
+                        return false;
+                    }
+                }
+            }
+
+            function stateck() {
+                if (httpxml.readyState == 4) {
+                    document.getElementById("date-time").innerHTML = httpxml.responseText;
+                }
+            }
+
+            var url = "server-time.php?sid=" + Math.random();
+
+            httpxml.onreadystatechange = stateck;
+            httpxml.open("GET", url, true);
+            httpxml.send(null);
+
+            tt = timer_function();
         }
 
-        function display_ct() {
-            var x = new Date();
-
-            var month = x.getMonth() + 1;
-            var day = x.getDate();
-            var year = x.getFullYear();
-            var hour = x.getHours();
-            var minute = x.getMinutes();
-            var second = x.getSeconds();
-
-            if (month < 10) {
-                month = '0' + month;
-            }
-            if (day < 10) {
-                day = '0' + day;
-            }
-
-            var x3 = day + '/' + month + '/' + year;
-
-            if (hour < 10) {
-                hour = '0' + hour;
-            }
-            if (minute < 10) {
-                minute = '0' + minute;
-            }
-            if (second < 10) {
-                second = '0' + second;
-            }
-
-            x3 += ' ' + hour + ':' + minute + ':' + second
-
-            document.getElementById('date-time').innerHTML = x3;
-            display_c();
+        function timer_function() {
+            mytime = setTimeout('ajaxFunction();', 1000);
         }
     </script>
 </body>

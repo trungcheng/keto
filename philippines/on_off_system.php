@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     header('Access-Control-Allow-Origin: *');
     header("Content-type: application/json; charset=utf-8");
     header("Access-Control-Allow-Methods: POST");
@@ -8,8 +9,9 @@
 
     $state = isset($_POST['state']) ? $_POST['state'] : 'On';
     $status = $state == 'false' ? 'Off' : 'On';
+    $now = date('Y-m-d H:i:s');
 
-    $sql = "UPDATE on_off_time SET Status = '$status' WHERE ID = 1";
+    $sql = "INSERT INTO on_off_time(`Status`, `timestamp`) VALUES ('$status', '$now')";
     if (mysqli_query($conn, $sql)) {
         return response(true, 'Update success', []);
     }
